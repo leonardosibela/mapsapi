@@ -13,13 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public class GoogleAPI {
+public class GoogleMapsAPI {
 
     private static final String ENDPOINT_URL = "https://maps.googleapis.com/";
 
-    private static GoogleDistanceMatrixService googleDistanceMatrixService;
+    private static GoogleMapsService googleMapsService;
 
-    public interface GoogleDistanceMatrixService {
+    public interface GoogleMapsService {
 
         @GET("maps/api/distancematrix/json")
         Call<DistanceMatrixReturn> getDistanceMatrix(@Query("origins") Place origin, @Query("destinations") Place destination, @Query("key") String key);
@@ -28,9 +28,9 @@ public class GoogleAPI {
         Call<ReverseGeocodingReturn> getAdress(@Query("latlng") Place place, @Query("key") String key);
     }
 
-    public static GoogleDistanceMatrixService getInstance() {
+    public static GoogleMapsService getInstance() {
 
-        if (googleDistanceMatrixService == null) {
+        if (googleMapsService == null) {
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(ENDPOINT_URL)
@@ -38,10 +38,10 @@ public class GoogleAPI {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
-            googleDistanceMatrixService = retrofit.create(GoogleDistanceMatrixService.class);
+            googleMapsService = retrofit.create(GoogleMapsService.class);
         }
 
-        return googleDistanceMatrixService;
+        return googleMapsService;
     }
 
     public static class Place {
