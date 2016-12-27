@@ -31,16 +31,53 @@
         android:gravity="center"
         android:text="blalallbldldldspçldsalkadsçlsd" />
 
-    <TextView
-        android:id="@+id/distance_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/get_info_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="24dp"
         android:text="Get Info" />
+
+
+    <TextView
+        android:id="@+id/distance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/get_info_button"
+        android:text="Distância:" />
+
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/get_info_button"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/distance_label"
+        android:layout_toRightOf="@+id/distance_label"
+        android:text="- km" />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/get_info_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="--:--" />
+
+    <TextView
+        android:id="@+id/duration_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/get_info_button"
+        android:layout_toLeftOf="@+id/duration"
+        android:layout_toStartOf="@+id/duration"
+        android:text="Duração:" />
 
 </RelativeLayout>
