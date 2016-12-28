@@ -23,4 +23,8 @@ public class ReverseGeocodingReturn {
     public String getStatus() {
         return status;
     }
+
+    public String getFormatedAdress() {
+        return results.get(0).getFormatted_address();
+    }
 }

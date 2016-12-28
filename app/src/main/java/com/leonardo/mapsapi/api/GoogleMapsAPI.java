@@ -1,8 +1,5 @@
 package com.leonardo.mapsapi.api;
 
-import android.location.Location;
-
-import com.leonardo.mapsapi.model.Adress;
 import com.leonardo.mapsapi.model.DistanceMatrixReturn;
 import com.leonardo.mapsapi.model.ReverseGeocodingReturn;
 
@@ -49,17 +46,9 @@ public class GoogleMapsAPI {
         private double latitude;
         private double longitude;
 
-        private Place(double latitude, double longitude) {
+        public Place(double latitude, double longitude) {
             this.latitude = latitude;
             this.longitude = longitude;
-        }
-
-        public Place(Location location) {
-            this(location.getLatitude(), location.getLongitude());
-        }
-
-        public Place(Adress adress) {
-            this(adress.getLatitude(), adress.getLongitude());
         }
 
         public double getLatitude() {

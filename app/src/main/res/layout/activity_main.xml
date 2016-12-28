@@ -12,12 +12,14 @@
 
     <EditText
         android:id="@+id/latitude"
+        android:text="-22.367939"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="latitude" />
 
     <EditText
         android:id="@+id/longitude"
+        android:text="-46.943245"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/latitude"
